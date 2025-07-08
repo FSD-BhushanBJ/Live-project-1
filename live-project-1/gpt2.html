@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sai Transformations.Ltd</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .main-container {
+        width: 100%;
+        height: 100%;
+      }
+      header {
+        width: 100%;
+        height: 10%;
+        background-color: aqua;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+        color: white;
+        z-index: 1000;
+        padding: 20px;
+        backdrop-filter: blur(4px); /* optional blur effect */
+      }
+      .logo {
+        margin-left: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 100px;
+        font-family: "Alumni Sans Collegiate One";
+        font-size: 48px;
+        font-weight: 400; /* This font has only one weight */
+        color: #ffffff; /* Or any color */
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 35px;
+      }
+      
+        .nav ul {
+          list-style: none;
+          display: flex;
+          gap: 30px;
+          margin: 0;
+          padding: 0;
+          
+        }
+
+        .nav a {
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          transition: 0.3s;
+        }
+
+        .nav a:hover {
+          color: #f0c040; /* Highlight on hover */
+        }
+      
+      .hero {
+        width: 100%;
+        height: 100%;
+        background-color: blue;
+        background-image: url(./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(70%)
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="logo">SAI TRASFORMATIONS.LTD</div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero">
+        <h1>PRECISION WELDING</h1>
+        <br>
+        <h1>& METAL FABRICATION</h1>
+      </div>
+    </div>
+  </body>
+</html>
