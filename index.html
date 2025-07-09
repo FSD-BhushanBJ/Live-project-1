@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Sai Transformations.Ltd</title>
+    <link rel="icon" href="" style="border-radius: 50%;">
+
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        font-family: sans-serif;
+      }
+
+      .main-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Header */
+      header {
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+      }
+
+      /* Logo */
+      .logo {
+        font-family: "Alumni Sans Collegiate One", sans-serif;
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* Navigation */
+      .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 26px;
+        transition: 0.3s;
+      }
+
+      .nav a:hover {
+        color: #f0c040;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url('./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Dimmed Overlay */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* dark overlay */
+        z-index: 1;
+      }
+
+      /*  Hero Text */
+      .hero-text {
+        font-family: 'Jockey One', sans-serif;
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        padding-top: 200px;
+        margin-right: 650px;
+        font-size: 40px;
+        font-weight: bold;
+      }
+      .ho{
+        margin-left: 68px;
+      }
+      .hi{
+        margin-left: 20px;
+      }
+      .know{
+        width: 200px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 800;
+        margin-right: 630px;
+        background-color: #E9A319;
+        border: none    ;
+      }
+      .card{
+        font-size: 25px;
+        font-weight: 500px;
+        margin-left: 85px;
+        width: 90%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        gap: 20px;
+        color: white;
+        
+      }
+      .card1{
+        gap: 20px;
+        border-radius: 5%;
+        height: 95%;
+        width: 50%;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .card2{
+        gap: 20px;
+        border-radius: 5%;
+        height: 95%;
+        width: 50%;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .card3{
+        gap: 20px;
+        border-radius: 5%;
+        height: 95%;
+        width: 50%;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .card4{
+        gap: 20px;
+        border-radius: 5%;
+        height: 95%;
+        width: 50%;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .card5{
+        gap: 20px;
+        border-radius: 5%;
+        height: 95%;
+        width: 50%;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .pimg{
+        height: 60%;
+        width: 60%;
+        background-color: wheat;
+        border-radius: 5%;
+      }
+      /* about section */
+      .about {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url('./assets/Download\ Technology\ background\ for\ gears\ in\ mechanical\ concepts_\ for\ free.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header>
+        <div class="logo">SAI TRANSFORMATIONS.LTD</div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">ContactUs</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!--  Hero Section -->
+      <div class="hero">
+        <div class="hero-text">
+          <h1 class="" style="color:#E9A319;">PRECISION WELDING</h1>
+          <h1 class="ho">& METAL FABRICATION</h1>
+          <br>
+          <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
+          <br>
+          <button class="know">KNOW MORE</button>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card1">
+              <div class="pimg">
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="100%" width="100%" style="border-radius: 5%;">
+              </div>
+              <p>Metal Fabrications</p>
+            </div>
+            <div class="card2">
+              <div class="pimg">
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="100%" width="100%" style="border-radius: 5%;">
+              </div>
+              <p>Industrial Shed's</p>
+            </div>
+            <div class="card3">
+              <div class="pimg">
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="100%" width="100%" style="border-radius: 5%;">
+              </div>
+              <p>Roofing Shed's</p>
+            </div>
+            <div class="card4">
+              <div class="pimg">
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="100%" width="100%" style="border-radius: 5%;">
+              </div>
+              <p>School Furnitures</p>
+            </div>
+            <div class="card5">
+              <div class="pimg">
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="100%" width="100%" style="border-radius: 5%;">
+              </div>
+              <p>Metal Furnitures</p>
+            </div>
+          </div>
+      </div>
+      <div class="about">
+        <div class="sec1">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
