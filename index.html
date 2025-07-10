@@ -18,6 +18,7 @@
         width: 100vw;
         height: 100vh;
         font-family: sans-serif;
+        scroll-behavior: smooth;
       }
 
       .main-container {
@@ -101,12 +102,17 @@
         margin-right: 650px;
         font-size: 40px;
         font-weight: bold;
+        
+      }
+      .head{
+        
       }
       .ho {
         margin-left: 68px;
       }
       .hi {
         margin-left: 20px;
+        
       }
       .know {
         width: 200px;
@@ -116,6 +122,7 @@
         margin-right: 630px;
         background-color: #e9a319;
         border: none;
+        margin-bottom: 75px;
       }
       .know:hover{
         transform: scale(1.05); /* Slight zoom */
@@ -131,7 +138,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 60px;
+        margin-top: 10px;
         gap: 20px;
         color: white;
       }
@@ -200,8 +207,8 @@
         align-items: center;
       }
       .card4:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
       }
       .card5 {
         gap: 20px;
@@ -215,10 +222,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
       }
       .card5:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        transform: scale(1.05); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
       }
       .pimg {
         display: block;
@@ -230,8 +238,8 @@
         object-fit: cover;
       }
       .pimg:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        transform: scale(1.05); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
       }
       p{
         margin-bottom: 20px;
@@ -241,26 +249,49 @@
       .about {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background-image: url("./assets/Download\ Technology\ background\ for\ gears\ in\ mechanical\ concepts_\ for\ free.jpg");
         background-size: cover;
         background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .sec1{
-        height: 94%;
-        width: 96%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
+        background-attachment: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+      .sec1{
+        height: 100%;
+        width: 96%;
+        color: white;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 30px;
         
       }
+      .sec2{
+        height: 100%;
+        width: 96%;
+       color: white;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 30px;
+        
+      }
+
       .lang{
         margin-left: 1550px;
         
@@ -288,10 +319,10 @@
       <div class="hero">
         
         <div class="hero-text">
-          <div class="tbutton">
+          <!-- <div class="tbutton">
             <button >Translate</button>
-          </div>
-          <h1 class="" style="color: #e9a319">PRECISION WELDING</h1>
+          </div> -->
+          <h1 class="head" style="color: #e9a319">PRECISION WELDING</h1>
           <h1 class="ho">& METAL FABRICATION</h1>
           <br />
           <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
@@ -360,13 +391,92 @@
             </div>
           </div>
         </div>
+        <br>
+        <br>
         <br />
       </div>
+      
+      <!-- About section -->
       <div class="about">
         <div class="sec1">
-        <h1>About Us</h1>
+        <h1 style="font-size: 45px; color: #e9a319;">About Us</h1>
+        <br>
         <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+        <br>
+        <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1>
         </div>
+        <br><br>
+        <!-- part 1 -->
+        <div class="sec2">
+          <h1 style="font-size: 45px;">About Us</h1>
+          <br>
+          <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+          <br>
+          <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1>
+          </div>
+          <br><br>
+        <!-- part 1 -->
+        <div class="sec2">
+          <h1 style="font-size: 45px;">WHY  CHOOSE  US</h1>
+          <br>
+          <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+          <br>
+          <h1>Building Quality and Trust Since 1996</h1>
+          </div>
+          <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+            <!-- part 1 -->
+            <div class="sec2">
+              <h1 style="font-size: 45px;">About Us</h1>
+              <br>
+              <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+              <br>
+              <h1>Building Quality and Trust Since 1996</h1>
+              </div>
+              <br><br>
+              <!-- part 1 -->
+              <div class="sec2">
+                <h1 style="font-size: 45px; color: #e9a319;">About Us</h1>
+                <br>
+                <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+                <br>
+                <h1>Building Quality and Trust Since 1996</h1>
+                </div>
       </div>
     </div>
   </body>
