@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sai Transformations.Ltd</title>
+    <link rel="icon" href="" style="border-radius: 50%" />
+
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: "Alumni Sans Collegiate One", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #f0c040;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 150px 20px 30px;
+}
+
+.hero-text h1,
+.hero-text h4 {
+  margin: 10px 0;
+}
+
+.know {
+  width: 60%;
+  max-width: 200px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #e9a319;
+  border: none;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.know:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards Section */
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 10px;
+}
+
+.card1, .card2, .card3, .card4, .card5 {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  flex: 1 1 200px;
+  max-width: 280px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover,
+.card5:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pimg img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about {
+  background-image: url("./assets/Download Technology background for gears in mechanical concepts_ for free.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 30px 20px;
+  color: white;
+}
+
+.sec1, .sec2 {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-text {
+    padding: 100px 10px 30px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .know {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav a {
+    font-size: 1rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Add to existing styles */
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    text-align: left;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.hero-text {
+  padding-top: 130px; /* space for fixed header */
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header>
+        <div class="logo">SAI TRANSFORMATIONS.LTD</div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">ContactUs</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+      <!--  Hero Section -->
+      <div class="hero">
+        
+        <div class="hero-text">
+          <!-- <div class="tbutton">
+            <button >Translate</button>
+          </div> -->
+          <h1 class="head" style="color: #e9a319; font-size: 55px; " >PRECISION WELDING</h1>
+          <h1 class="ho">& METAL FABRICATION</h1>
+          <br />
+          <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
+          <br />
+          <button class="know">KNOW MORE</button>
+          <div class="card">
+            <div class="card1">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Metal Fabrications</p>
+            </div>
+            <div class="card2">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Industrial Shed's</p>
+            </div>
+            <div class="card3">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Roofing Shed's</p>
+            </div>
+            <div class="card4">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>School Furnitures</p>
+            </div>
+            <div class="card5">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Metal Furnitures</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br />
+      </div>
+      
+      <!-- About section -->
+      <div class="about">
+        <div class="sec1">
+        <h1 style="font-size: 45px; color: #e9a319;">About Us</h1>
+        <br>
+        <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+        <br>
+        <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1>
+        </div>
+        <br><br>
+        <!-- part 1 -->
+        <div class="sec2">
+          <h1 style="font-size: 45px;">About Us</h1>
+          <br>
+          <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+          <br>
+          <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1>
+          </div>
+          <br><br>
+        <!-- part 1 -->
+        <div class="sec2">
+          <h1 style="font-size: 45px;">WHY  CHOOSE  US</h1>
+          <br>
+          <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+          <br>
+          <h1>Building Quality and Trust Since 1996</h1>
+          </div>
+          <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">Our Services</h1>
+            <br>
+            <h2>Our extensive industry experience and unwovering commitment to quality make us the preferred choice for all your metal fabrication needs.</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+          <!-- part 1 -->
+          <div class="sec2">
+            <h1 style="font-size: 45px;">About Us</h1>
+            <br>
+            <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+            <br>
+            <h1>Building Quality and Trust Since 1996</h1>
+            </div>
+            <br><br>
+            <!-- part 1 -->
+            <div class="sec2">
+              <h1 style="font-size: 45px;">About Us</h1>
+              <br>
+              <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+              <br>
+              <h1>Building Quality and Trust Since 1996</h1>
+              </div>
+              <br><br>
+              <!-- part 1 -->
+              <div class="sec2">
+                <h1 style="font-size: 45px; color: #e9a319;">About Us</h1>
+                <br>
+                <h2>Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</h2>
+                <br>
+                <h1>Building Quality and Trust Since 1996</h1>
+                </div>
+      </div>
+    </div>
+  </body>
+</html>
