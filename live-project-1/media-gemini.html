@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sai Transformations.Ltd</title>
+    <link rel="icon" href="" style="border-radius: 50%" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        /* Adjust scroll-padding-top for header height on smaller screens if needed */
+        scroll-padding-top: 100px;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh; /* Use min-height to allow content to extend beyond viewport */
+        font-family: sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+      }
+
+      .main-container {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Header */
+      header {
+        width: 100%;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Slightly more opaque for better readability */
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        gap: 15px; /* Space between logo and nav on smaller screens */
+      }
+
+      /* Logo */
+      .logo {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 32px; /* Adjusted for mobile-first */
+        font-weight: 550;
+        color: #e9a319; /* Changed to your brand color for consistency */
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* Navigation */
+      .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px; /* Adjusted gap */
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center; /* Center nav items when wrapped */
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem; /* Adjusted for mobile-first */
+        transition: 0.3s;
+        white-space: nowrap; /* Prevent nav links from breaking */
+      }
+
+      .nav a:hover {
+        color: #f0c040;
+      }
+
+      /* Dropdown for Language */
+      header select {
+        padding: 5px 10px; /* Smaller padding */
+        border-radius: 4px;
+        border: none;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* Slightly visible background */
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+      header select option {
+        background-color: #333; /* Darker background for options */
+        color: white;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url("./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex; /* Use flexbox for better centering */
+        flex-direction: column;
+        justify-content: center; /* Vertically center content */
+        align-items: center; /* Horizontally center content */
+        padding: 20px; /* Add some padding */
+      }
+
+      /* Dimmed Overlay */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* dark overlay */
+        z-index: 1;
+      }
+
+      /* Hero Text */
+      .hero-text {
+        font-family: "Jockey One", sans-serif;
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center; /* Center text by default */
+        padding-top: 100px; /* Adjusted for header, will refine with media queries */
+        /* Removed fixed margins to allow centering and responsiveness */
+        font-size: 28px; /* Mobile-first font size */
+        font-weight: bold;
+        width: 100%; /* Take full width */
+        max-width: 90%; /* Max width for content */
+      }
+
+      .head {
+        font-size: 1.5em; /* Relative to parent hero-text font size */
+        color: #e9a319;
+        margin-bottom: 10px;
+      }
+      .ho {
+        margin-left: 0; /* Remove fixed margin */
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+      .hi {
+        margin-left: 0; /* Remove fixed margin */
+        font-size: 0.9em;
+        margin-bottom: 20px;
+      }
+      .know {
+        width: 120px; /* Smaller button for mobile */
+        height: 50px;
+        font-size: 18px;
+        font-weight: 800;
+        margin-right: 0; /* Remove fixed margin */
+        background-color: #e9a319;
+        border: none;
+        margin-bottom: 30px; /* Adjusted margin */
+        border-radius: 5px; /* Added border-radius */
+      }
+      .know:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+
+      .card {
+        font-size: 20px; /* Adjusted for mobile-first */
+        font-weight: 500;
+        margin-left: 0; /* Remove fixed margin */
+        width: 95%; /* Adjust width for mobile */
+        display: flex;
+        flex-direction: column; /* Stack cards vertically on mobile */
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px; /* Adjusted margin */
+        gap: 20px;
+        color: white;
+        padding: 10px; /* Add padding to card container */
+      }
+      /* Common styles for all cards */
+      .card1,
+      .card2,
+      .card3,
+      .card4,
+      .card5 {
+        gap: 10px; /* Reduced gap inside cards */
+        height: auto; /* Allow height to adjust */
+        width: 100%; /* Full width for individual cards on mobile */
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px; /* Padding inside each card */
+        border-radius: 8px; /* Added border-radius */
+        text-align: center;
+      }
+      .card1:hover,
+      .card2:hover,
+      .card3:hover,
+      .card4:hover,
+      .card5:hover {
+        transform: scale(1.03); /* Slight zoom for all cards */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .pimg {
+        display: block;
+        margin: 10px auto;
+        max-width: 80%; /* Adjusted for mobile, allow images to be larger */
+        height: 120px; /* Adjusted height */
+        width: 200px; /* Adjusted width */
+        background-color: wheat;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .pimg img {
+        /* Ensure the image inside pimg is also responsive */
+        max-width: 100%;
+        height: 100%;
+        border-radius: 5%;
+      }
+      .pimg:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      p {
+        margin-bottom: 10px; /* Adjusted margin */
+        font-size: 1rem; /* Base font size for paragraphs */
+      }
+
+      /* about section */
+      .about {
+        position: relative;
+        width: 100%;
+        height: auto; /* Allow height to adjust based on content */
+        background-image: url("./assets/Download\ Technology\ background\ for\ gears\ in\ mechanical\ concepts_\ for\ free.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px; /* Add padding to the section itself */
+      }
+      .sec1,
+      .sec2 {
+        height: auto; /* Allow height to adjust */
+        width: 95%; /* Adjusted width for mobile */
+        color: white;
+        position: relative;
+        backdrop-filter: blur(4px);
+        background: rgba(
+          0,
+          0,
+          0,
+          0.6
+        ); /* Slightly more opaque for readability */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px; /* Adjusted padding */
+        margin-bottom: 20px; /* Space between sections */
+        border-radius: 8px; /* Added border-radius */
+      }
+      .sec1 h1,
+      .sec2 h1 {
+        font-size: 35px; /* Mobile-first heading size */
+        color: #e9a319;
+        margin-bottom: 15px;
+      }
+      .sec1 p,
+      .sec2 p {
+        font-size: 1rem; /* Mobile-first paragraph size */
+        line-height: 1.5; /* Improve readability */
+      }
+
+      .lang {
+        margin-left: 0; /* Remove fixed margin, will be handled by flexbox */
+      }
+      .ser {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack services vertically on mobile */
+        gap: 20px;
+        cursor: pointer;
+      }
+      .ser1 {
+        height: auto; /* Allow height to adjust */
+        padding: 15px; /* Adjusted padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(31, 29, 28);
+        gap: 10px; /* Adjusted gap */
+        border-radius: 10px;
+        text-align: center;
+      }
+      .ser1 img {
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto;
+        max-height: 150px; /* Limit image height for consistency */
+        width: auto;
+      }
+      .ser1 p {
+        font-size: 1.2rem; /* Adjusted for mobile */
+        margin-bottom: 0; /* Remove bottom margin */
+      }
+      .ser1:hover {
+        transform: scale(1.03); /* Slight zoom */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .per {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack projects vertically on mobile */
+        gap: 20px;
+        cursor: pointer;
+      }
+      .per1 {
+        height: auto; /* Allow height to adjust */
+        padding: 15px; /* Adjusted padding */
+        display: flex;
+        flex-direction: column; /* Stack image and text vertically on mobile */
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(31, 29, 28);
+        gap: 15px; /* Adjusted gap */
+        border-radius: 10px;
+        text-align: center;
+      }
+      .per1 img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px; /* Limit image height */
+        border-radius: 10px;
+      }
+      .per1 p {
+        font-size: 1rem; /* Adjusted for mobile */
+        margin-bottom: 0;
+      }
+      .per1:hover {
+        transform: scale(
+          1.01
+        ); /* Slightly less zoom than ser1 due to content size */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Footer */
+      #footer h1 {
+        font-size: 35px; /* Mobile-first heading size */
+        text-align: center;
+      }
+      #footer .ser1 {
+        /* Styles for workshop images container */
+        flex-direction: column; /* Stack images vertically on mobile */
+        gap: 20px;
+        padding: 0; /* Remove padding for image container */
+        background-color: transparent; /* Transparent background */
+        box-shadow: none; /* No shadow */
+      }
+      #footer .ser1 img {
+        max-width: 95%; /* Adjust width for workshop images */
+        height: auto;
+        max-height: 250px; /* Limit height */
+        margin: 0 auto; /* Center images */
+        display: block;
+      }
+      #footer div[style*="grid-template-columns: 1fr 1fr;"] {
+        grid-template-columns: 1fr; /* Stack "Why Choose Us" items vertically */
+        margin-left: 0;
+        padding: 0 15px;
+      }
+      #footer div[style*="height: 100px;"] {
+        height: auto;
+        margin-bottom: 10px;
+      }
+      #footer h1[style*="font-size: 55px;"] {
+        font-size: 40px; /* Adjusted for mobile */
+      }
+      #footer p[style*="font-size: 35px;"] {
+        font-size: 25px; /* Adjusted for mobile */
+      }
+      #footer .know {
+        width: 250px;
+        height: 70px;
+        font-size: 22px;
+      }
+      #footer p[style*="text-align: center;"] a {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+      #footer p[style*="font-size: 25px;"] {
+        font-size: 16px;
+      }
+
+      /* ------------------------------------------- */
+      /* Media Queries for Responsiveness            */
+      /* ------------------------------------------- */
+
+      /* Small Tablets & Larger Phones (e.g., 576px and up) */
+      @media (min-width: 576px) {
+        .logo {
+          font-size: 38px;
+        }
+        .nav ul {
+          gap: 25px;
+        }
+        .nav a {
+          font-size: 1.1rem;
+        }
+        header select {
+          font-size: 1rem;
+        }
+
+        .hero-text {
+          font-size: 35px;
+          padding-top: 120px;
+        }
+        .know {
+          width: 140px;
+          height: 55px;
+          font-size: 20px;
+        }
+        .card {
+          flex-direction: row; /* Start arranging cards in rows */
+          flex-wrap: wrap; /* Allow cards to wrap */
+          justify-content: center;
+          gap: 25px;
+        }
+        .card1,
+        .card2,
+        .card3,
+        .card4,
+        .card5 {
+          width: 45%; /* Two cards per row */
+          padding: 20px;
+        }
+        .pimg {
+          height: 130px;
+          width: 220px;
+        }
+
+        .sec1 h1,
+        .sec2 h1 {
+          font-size: 40px;
+        }
+        .sec1 p,
+        .sec2 p {
+          font-size: 1.1rem;
+        }
+        .ser {
+          grid-template-columns: 1fr 1fr; /* Two columns for services */
+        }
+        .ser1 p {
+          font-size: 1.3rem;
+        }
+        .per1 {
+          flex-direction: row; /* Arrange project image and text side-by-side */
+          text-align: left;
+        }
+        .per1 img {
+          max-width: 45%;
+          max-height: 220px;
+        }
+        .per1 p {
+          font-size: 1.1rem;
+        }
+        /* Reverse order for some project items for varied layout */
+        .per1:nth-child(even) {
+          flex-direction: row-reverse;
+        }
+        #footer .ser1 {
+          flex-direction: row; /* Two workshop images side-by-side */
+          justify-content: center;
+        }
+        #footer .ser1 img {
+          max-width: 48%; /* Adjust for two images */
+        }
+        #footer div[style*="grid-template-columns: 1fr 1fr;"] {
+          grid-template-columns: 1fr 1fr; /* Two columns for "Why Choose Us" items */
+          margin-left: 5%; /* Adjust as needed */
+          margin-right: 5%;
+        }
+        #footer h1[style*="font-size: 55px;"] {
+          font-size: 45px;
+        }
+        #footer p[style*="font-size: 35px;"] {
+          font-size: 30px;
+        }
+      }
+
+      /* Medium Tablets and Laptops (e.g., 768px and up) */
+      @media (min-width: 768px) {
+        header {
+          padding: 20px 40px;
+        }
+        .logo {
+          font-size: 42px;
+        }
+        .nav ul {
+          gap: 30px;
+        }
+        .nav a {
+          font-size: 1.3rem;
+        }
+
+        .hero-text {
+          font-size: 40px;
+          padding-top: 150px; /* Original padding */
+          text-align: left; /* Align text to left */
+          margin-right: 650px; /* Restore original margin for left alignment */
+          max-width: none; /* Remove max-width constraint */
+        }
+        .head {
+          font-size: 1.5em;
+        }
+        .ho {
+          margin-left: 68px; /* Restore original margin */
+        }
+        .hi {
+          margin-left: 20px; /* Restore original margin */
+        }
+        .know {
+          width: 150px;
+          height: 60px;
+          font-size: 25px;
+          margin-right: 630px; /* Restore original margin */
+        }
+        .card {
+          flex-direction: row;
+          flex-wrap: nowrap; /* Prevent wrapping for now */
+          justify-content: center;
+          margin-left: 100px; /* Restore original margin */
+          width: 142%; /* Restore original width */
+        }
+        .card1,
+        .card2,
+        .card3,
+        .card4,
+        .card5 {
+          width: 100%; /* Take full width within its card container (which is 142%) */
+          flex-basis: calc(20% - 20px); /* 5 cards in a row with gap */
+          max-width: 250px; /* Max width for each card */
+        }
+        .pimg {
+          height: 150px;
+          width: 250px;
+        }
+
+        .sec1,
+        .sec2 {
+          width: 90%; /* Larger width for sections */
+          padding: 30px;
+        }
+        .sec1 h1,
+        .sec2 h1 {
+          font-size: 45px;
+        }
+        .sec1 p,
+        .sec2 p {
+          font-size: 1.2rem;
+        }
+        .ser {
+          grid-template-columns: 1fr 1fr 1fr; /* Three columns for services */
+        }
+        .ser1 img {
+          width: 300px;
+          height: 150px;
+        }
+        .ser1 p {
+          font-size: 1.5rem;
+        }
+        .per1 {
+          gap: 20px;
+        }
+        .per1 img {
+          width: 500px;
+          height: 250px;
+          max-width: 50%;
+        }
+        .per1 p {
+          font-size: 1.2rem;
+        }
+
+        #footer .ser1 img {
+          width: 600px; /* Restore original size for workshop images */
+          height: 300px;
+        }
+        #footer h1[style*="font-size: 55px;"] {
+          font-size: 50px;
+        }
+        #footer p[style*="font-size: 35px;"] {
+          font-size: 30px;
+        }
+        #footer div[style*="grid-template-columns: 1fr 1fr;"] {
+          margin-left: 150px; /* Restore original margin */
+        }
+      }
+
+      /* Large Desktops (e.g., 992px and up) */
+      @media (min-width: 992px) {
+        header {
+          padding: 20px 60px; /* Original padding */
+        }
+        .logo {
+          font-size: 48px; /* Original font size */
+        }
+        .nav a {
+          font-size: 1.5rem; /* Original font size */
+        }
+        .nav ul {
+          gap: 30px; /* Original gap */
+        }
+
+        .hero-text {
+          font-size: 40px; /* Original font size */
+          margin-right: 650px;
+        }
+        .card {
+          width: 142%; /* Original width */
+          margin-left: 100px; /* Original margin */
+        }
+        .card1,
+        .card2,
+        .card3,
+        .card4,
+        .card5 {
+          flex-basis: auto; /* Revert flex-basis if needed, or keep for consistency */
+          width: 100%; /* Max width relative to parent */
+        }
+
+        .sec1,
+        .sec2 {
+          width: 96%; /* Original width */
+        }
+        .sec1 h1,
+        .sec2 h1 {
+          font-size: 50px;
+        }
+        .sec1 p,
+        .sec2 p {
+          font-size: 30px; /* Original font size */
+        }
+        .per1 p {
+          font-size: 30px; /* Original font size */
+        }
+      }
+
+      /* Extra Large Desktops (e.g., 1200px and up) */
+      @media (min-width: 1200px) {
+        /* Any specific styles for very large screens can go here */
+        /* For now, the 992px styles should work well */
+        .hero-text {
+          /* You might want to adjust text positioning or max-width for very large screens */
+          /* For example, if you want it to be more central or have a wider content area */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header>
+        <div class="logo" style="color: #e9a319">
+          🛠️ SAI TRANSFORMATIONS.LTD
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">ContactUs</a></li>
+            <select
+              style="
+                padding: 8px 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                border: none;
+                background-color: transparent;
+                color: white;
+              "
+            >
+              <option>Select Language</option>
+              <option>English</option>
+              <option>Marathi</option>
+              <option>Hindi</option>
+            </select>
+          </ul>
+        </nav>
+      </header>
+
+      <!--  Hero Section -->
+      <div class="hero">
+        <div class="hero-text">
+          <!-- <div class="tbutton">
+            <button >Translate</button>
+          </div> -->
+          <h1 class="head" style="color: #e9a319">PRECISION WELDING</h1>
+          <h1 class="ho">& METAL FABRICATION</h1>
+          <br />
+          <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
+          <br />
+          <button class="know">KNOW MORE</button>
+          <div class="card">
+            <div class="card1">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/metalfabrication.jpg"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Metal Fabrications</p>
+            </div>
+            <div class="card2">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/industrialshed.webp"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Industrial Shed's</p>
+            </div>
+            <div class="card3">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/roofing shed.webp"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Roofing Shed's</p>
+            </div>
+            <div class="card4">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/schoolfurniture.jpg"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>School Furnitures</p>
+            </div>
+            <div class="card5">
+              <div class="pimg">
+                <img
+                  src="./assets/sai web pro images/metal furnioture.jpg"
+                  alt=""
+                  height="100%"
+                  width="100%"
+                  style="border-radius: 5%"
+                />
+              </div>
+              <p>Metal Furnitures</p>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+      </div>
+
+      <!-- About section -->
+      <div class="about" id="about">
+        <br /><br />
+        <div class="sec1">
+          <h1 style="font-size: 50px; color: #e9a319">About Us</h1>
+          <br />
+          <p style="font-size: 30px">
+            Sai Transformation is Katol based metal manufacturer fabrication
+            company known for roofing sheds, metal and school furniture’s, gates
+            & window grills. A trusted branch of Sai Fabrication & Gas Welding
+            (Est: 1998).
+          </p>
+          <br />
+          <p style="font-size: 30px">
+            We offer a wide range of metal fabrication services, including
+            Gates,,Window-Grills,Staircases,Industry Shed & Roofing and more.
+            Our team possesses the knowledge and skills to handle any project
+            from standard designs to unique,custom-build structures.
+          </p>
+          <br />
+          <h1 style="color: #e9a319; font-size: 40px">
+            Building Quality and Trust Since 1996
+          </h1>
+        </div>
+        <br /><br />
+        <!-- Services -->
+
+        <div class="sec2" id="services">
+          <h1 style="font-size: 50px; color: #e9a319">Services</h1>
+          <br /><br />
+          <div class="ser">
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/roofing shed.webp"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 ROOFING SHED</p>
+            </div>
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/metal furnioture.jpg"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 METAL FURNITURES</p>
+            </div>
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/schoolfurniture.jpg"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 SCHOOL FURNITURES</p>
+            </div>
+
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/channel gates.png"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 CHANNEL GATES</p>
+            </div>
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/industrialshed.webp"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 DOME SHED</p>
+            </div>
+            <div class="ser1">
+              <img
+                src="./assets/sai web pro images/machan work.png"
+                alt=""
+                height="150px"
+                width="300px"
+              />
+              <p style="font-size: 25px">👨🏻‍🏭 CUSTOMS WELDING'S</p>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <!-- Project secs -->
+
+        <div class="sec2" id="projects">
+          <h1 style="font-size: 50px; color: #e9a319">Featured Projects</h1>
+          <br /><br />
+          <div class="per">
+            <div class="per1">
+              <div>
+                <img
+                  src="./assets/sai web pro images/taj safari .png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div>
+                <p style="font-size: 30px">
+                  📍 Location: Taj Safari – Baghvan Lodge, Pench (M.P.) <br />
+                  🏗️ Work Done: Swimming Pool Area Fabrication & Finishing
+                  <br />
+                  🧱 Type: Pool Decking, Shade Structure & Utility Integration
+                  <br />
+                  📅 Timeline: 15th June 2021 – 29th June 2021 <br />
+                  🌟 Client: TAJ Hotels – TATA Group (IHCL) <br />
+                </p>
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <p style="font-size: 30px">
+                  🏫 Location: ORCHID PUBLIC SCHOOL, Katol <br />
+                  🏗️ Work Done: Dome Structure Fabrication & Installation <br />
+                  🔩 Type: Custom Metal Framework with Roofing <br />
+                  📅 Timeline: 16 DAYS <br />
+                  👥 Beneficiaries: 300+ Students & Faculty <br />
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./assets/sai web pro images/Orchid shed.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img
+                  src="./assets/sai web pro images/Ruya high shed.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div>
+                <p style="font-size: 30px">
+                  🏫 Location: BANARASIDAS RUYA HIGH-SCHOOL, Katol <br />
+                  🔨 Work Done: Stage-Shed Construction <br />
+                  📐 Type: Fabrication + Roofing <br />
+                  📅 Timeline: 3 DAYS <br />
+                  👥 Beneficiaries: 500+ Students & Staff <br />
+                </p>
+              </div>
+            </div>
+
+            <div class="per1">
+              <div>
+                <p style="font-size: 30px">
+                  📍 Location: VARDHAN RESTAURANT, Katol <br />
+                  🏗️ Work Done: Outdoor Shed Fabrication & Installation <br />
+                  🛠️ Type: Weatherproof Dining Area Cover <br />
+                  📅 Timeline: 24 DAYS <br />
+                  👨‍👩‍👧‍👦 Beneficiaries: 100+ Daily Customers & Staff <br />
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./assets/sai web pro images/rajkamal.webp"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img
+                  src="./assets/sai web pro images/orchid deskbench.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div>
+                <p style="font-size: 30px">
+                  🏫 Location: ORCHID PUBLIC SCHOOL, Katol <br />
+                  🛠️ Work Done: Desk-Bench Installation <br />
+                  🔢 Quantity: 60+ Units <br />
+                  👩‍🏫 Students Benefited: 120+ <br />
+                  ⏱️ Timeline: 8 Days <br />
+                </p>
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <p style="font-size: 30px">
+                  🏫 Location: NABIRA MAHAVIDYALAYA, Katol <br />
+                  🛠️ Installed: 80 Desk-Benches <br />
+                  👨‍🎓 Beneficiaries: 150+ Students <br />
+                  ⏱️ Timeline: 14 Days <br />
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./assets/sai web pro images/nabira desk bench.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img
+                  src="./assets/sai web pro images/machan work.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div>
+                <p style="font-size: 30px">
+                  📍 Location: Katol (Farmhouse/Private Property) <br />
+                  🛠️ Work Done: Machan (Treehouse Platform) Fabrication &
+                  Installation <br />
+                  🪵 Type: Elevated Iron/Steel Platform with Safety Railings
+                  <br />
+                  📅 Timeline: 20 DAYS <br />
+                  👨‍🌾 Beneficiaries: Farm Visitors, Security Guards, Wildlife
+                  Spotters <br />
+                </p>
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <p style="font-size: 30px">
+                  📍 Location: Katol (Client-Specific Site) <br />
+                  🏗️ Work Done: Staircase Fabrication & Installation <br />
+                  🔩 Type: MS Frame with Anti-Slip Steps (Indoor/Outdoor) <br />
+                  📅 Timeline: 2 DAYS <br />
+                  👥 Beneficiaries: Residential/Commercial Property Users <br />
+                </p>
+              </div>
+              <div>
+                <img
+                  src="./assets/sai web pro images/stairs.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img
+                  src="./assets/sai web pro images/channel gates.png"
+                  alt=""
+                  height="250px"
+                  width="500px"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div>
+                <p style="font-size: 30px">
+                  📍 Location: Katol (Client-Specific Site) <br />
+                  🧰 Work Done: Custom Channel Gate Fabrication & Installation
+                  <br />
+                  🔩 Type: Mild Steel Sliding Gate with Locking System <br />
+                  📅 Timeline: 7 DAYS <br />
+                  👨‍🔧 Beneficiaries: Property Owner & Visitors <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- featured project end -->
+        <br /><br />
+        <div class="sec1" id="contacts">
+          <h1 style="font-size: 50px; color: #e9a319">Contact Us</h1>
+          <br />
+          <p style="font-size: 30px">
+            Sai Transformation (Sai Fabrication & Gas Welding Work) <br /><br />
+            📍 Near Fetri Junewani Road,  Katol, District Nagpur, Maharashtra –
+            441302  <br /><br />
+            📞 Phone: +91-8624837716  <br /><br />
+            📧 Email:25saifebrication@gmail.com  <br />
+            <br />🌐 Website: www.saitransformation.in
+          </p>
+          <br />
+          <!-- <p style="font-size: 40px;">We offer a wide range of metal fabrication services, including Gates,,Window-Grills,Staircases,Industry Shed & Roofing and more. Our team possesses the knowledge and skills to handle any project from standard designs to unique,custom-build structures.</p>
+            <br>
+            <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1> -->
+        </div>
+        <br /><br />
+        <!-- footer -->
+        <div class="sec1" id="footer">
+          <h1 style="font-size: 50px; color: #e9a319">Our Workshop</h1>
+          <br />
+          <div class="ser1" style="display: flex; flex-direction: row">
+            <img
+              src="./assets/workshop1.png"
+              alt=""
+              height="300px"
+              width="600px"
+              style="
+                width: 600px;
+                height: 300px;
+                border-radius: 10px;
+                display: inline-block;
+                margin-right: 50px;
+              "
+            />
+
+            <br />
+            <img
+              src="./assets/workshop2.png"
+              alt=""
+              height="300px"
+              width="600px"
+              style="
+                width: 600px;
+                height: 300px;
+                border-radius: 10px;
+                display: inline-block;
+                margin-left: 20px;
+              "
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <h1 style="font-size: 50px; color: #e9a319; text-align: center">
+            Why Choose Us
+          </h1>
+          <br />
+          <br />
+          <br />
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              margin-left: 150px;
+            "
+          >
+            <div style="height: 100px"><h1>✅ Quality Craftmanship</h1></div>
+            <div style="height: 100px">
+              <h1>⭐ Customer-Focused Approach</h1>
+            </div>
+            <div style="height: 100px"><h1>👷 Safety & Reliability</h1></div>
+            <div style="height: 100px"><h1>🏆 10+ year Experience</h1></div>
+            <div style="height: 100px"><h1>🕒 On Time Delivery</h1></div>
+            <div style="height: 100px"><h1>💯 Quality Materials</h1></div>
+          </div>
+          <br />
+          <p style="font-size: 55px; text-align: center; color: #e9a319">
+            SAI TRANSFORMATIONS
+          </p>
+
+          <p style="font-size: 35px; text-align: center; color: #e9a319">
+            SINCE 1996
+          </p>
+          <br />
+          <button
+            class="know"
+            style="width: 300px; height: 90px; display: block; margin: 0 auto"
+          >
+            START A PROJECT
+          </button>
+          <br />
+          <br />
+          <br /><br /><br />
+          <p style="text-align: center">
+            <a
+              href="https://www.facebook.com/share/12K6oBRojo6/"
+              target="_blank"
+              style="
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                margin-right: 20px;
+              "
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+                alt="Facebook"
+                style="vertical-align: middle; margin-right: 5px"
+              />
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/stmfkatol?igsh=MXF4cnR2b3lmajFo"
+              target="_blank"
+              style="
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                margin-right: 20px;
+              "
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+                alt="Instagram"
+                style="vertical-align: middle; margin-right: 5px"
+              />
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/918624837716?text=Hello%20Sai%20Transformations%2C%20I%20want%20a%20quote"
+              target="_blank"
+              style="
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                margin-right: 20px;
+              "
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+                alt="WhatsApp"
+                style="vertical-align: middle; margin-right: 5px"
+              />
+              WhatsApp
+            </a>
+          </p>
+          <hr style="color: #e9a319" />
+          <p
+            style="
+              text-align: center;
+              margin-top: 25px;
+              font-size: 25px;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                'Helvetica Neue', sans-serif;
+            "
+          >
+            © 2025 Sai Transformation. All Rights Reserve
+          </p>
+        </div>
+        <!-- footer -->
+      </div>
+    </div>
+  </body>
+</html>
