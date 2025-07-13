@@ -1,611 +1,688 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sai Transformations.Ltd</title>
-    <link rel="icon" href="" style="border-radius: 50%" />
+      <title>Sai Transformations.Ltd</title>
+      <link rel="icon" href="" style="border-radius: 50%" />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          scroll-behavior: smooth;
+          scroll-padding-top: 100px; 
+        }
 
-      body {
-        width: 100vw;
-        height: 100vh;
-        font-family: sans-serif;
-        scroll-behavior: smooth;
-      }
+        body {
+          width: 100vw;
+          height: 100vh;
+          font-family: sans-serif;
+          scroll-behavior: smooth;
+        }
 
-      .main-container {
-        width: 100%;
-        height: auto;
-      }
+        .main-container {
+          width: 100%;
+          height: auto;
+        }
 
-      /* Header */
-      header {
-        width: 100%;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 60px;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-      }
+        /* Header */
+        header {
+          width: 100%;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 60px;
+          position: fixed;
+          top: 0;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+        }
 
-      /* Logo */
-      .logo {
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 48px;
-        font-weight: 550;
-        color: #ffffff;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
+        /* Logo */
+        .logo {
+          font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 48px;
+          font-weight: 550;
+          color: #ffffff;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
 
-      /* Navigation */
-      .nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-      }
+        /* Navigation */
+        .nav ul {
+          list-style: none;
+          display: flex;
+          gap: 30px;
+        }
 
-      .nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.5rem;
-        transition: 0.3s;
-      }
+        .nav a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.5rem;
+          transition: 0.3s;
+        }
 
-      .nav a:hover {
-        color: #f0c040;
-      }
+        .nav a:hover {
+          color: #f0c040;
+        }
 
-      /* Hero Section */
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        background-image: url("./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg");
-        background-size: cover;
-        background-position: center;
-      }
+        /* Hero Section */
+        .hero {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          background-image: url("./assets/peter-herrmann-z6DJJZ1-1Cg-unsplash.jpg");
+          background-size: cover;
+          background-position: center;
+        }
 
-      /* Dimmed Overlay */
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* dark overlay */
-        z-index: 1;
-      }
+        /* Dimmed Overlay */
+        .hero::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5); /* dark overlay */
+          z-index: 1;
+        }
 
-      /*  Hero Text */
-      .hero-text {
-        font-family: "Jockey One", sans-serif;
-        position: relative;
-        z-index: 2;
-        color: white;
-        text-align: center;
-        padding-top: 200px;
-        margin-right: 650px;
-        font-size: 40px;
-        font-weight: bold;
-        
-      }
-      .head{
-        
-      }
-      .ho {
-        margin-left: 68px;
-      }
-      .hi {
-        margin-left: 20px;
-        
-      }
-      .know {
-        width: 200px;
-        height: 60px;
-        font-size: 25px;
-        font-weight: 800;
-        margin-right: 630px;
-        background-color: #e9a319;
-        border: none;
-        margin-bottom: 75px;
-      }
-      .know:hover{
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        /*  Hero Text */
+        .hero-text {
+          font-family: "Jockey One", sans-serif;
+          position: relative;
+          z-index: 2;
+          color: white;
+          text-align: center;
+          padding-top: 150px;
+          margin-right: 650px;
+          font-size: 40px;
+          font-weight: bold;
+          
+        }
+        /* .head{
+          
+        } */
+        .ho {
+          margin-left: 68px;
+        }
+        .hi {
+          margin-left: 20px;
+          
+        }
+        .know {
+          width: 150px;
+          height: 60px;
+          font-size: 25px;
+          font-weight: 800;
+          margin-right: 630px;
+          background-color: #e9a319;
+          border: none;
+          margin-bottom: 75px;
+        }
+        .know:hover{
+          transform: scale(1.05); /* Slight zoom */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+          cursor: pointer;
+        }
+        .card {
+          font-size: 25px;
+          font-weight: 500px;
+          margin-left: 100px;
+          width: 142%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+          gap: 20px;
+          color: white;
+        }
+        .card1 {
+          gap: 20px;
+          /* border-radius: 5%; */
+          height: 100%;
+          width: 100%;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .card1:hover {
+          transform: scale(1.05); /* Slight zoom */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        }
+        .card2 {
+          gap: 20px;
+          /* border-radius: 5%; */
+          height: 95%;
+          width: 100%;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .card2:hover {
+          transform: scale(1.05); /* Slight zoom */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        }
+        .card3 {
+          gap: 20px;
+          /* border-radius: 5%; */
+          height: 95%;
+          width: 100%;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .card3:hover {
+          transform: scale(1.05); /* Slight zoom */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+        }
+        .card4 {
+          gap: 20px;
+          /* border-radius: 5%; */
+          height: 95%;
+          width: 100%;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .card4:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        .card5 {
+          gap: 20px;
+          /* border-radius: 5%; */
+          height: 95%;
+          width: 100%;
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+        }
+        .card5:hover {
+          transform: scale(1.05); 
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        .pimg {
+          display: block;
+          margin: 10px auto;
+          max-width: 60%;
+          height: 150px;
+          width: 250px;
+          background-color: wheat;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+        .pimg:hover {
+          transform: scale(1.05); 
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        p{
+          margin-bottom: 20px;
+        }
+
+        /* about section */
+        .about {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-image: url("./assets/Download\ Technology\ background\ for\ gears\ in\ mechanical\ concepts_\ for\ free.jpg");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .sec1{
+          height: 100%;
+          width: 96%;
+          color: white;
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          top: 0;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          padding: 30px;
+          
+        }
+        .sec2{
+          height: 100%;
+          width: 96%;
+          color: white;
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          top: 0;
+          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          padding: 30px;
+          
+        }
+
+        .lang{
+          margin-left: 1550px;
+          
+        }
+        .ser{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
         cursor: pointer;
-      }
-      .card {
-        font-size: 25px;
-        font-weight: 500px;
-        margin-left: 100px;
-        width: 142%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        gap: 20px;
-        color: white;
-      }
-      .card1 {
-        gap: 20px;
-        /* border-radius: 5%; */
-        height: 100%;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .card1:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
-      }
-      .card2 {
-        gap: 20px;
-        /* border-radius: 5%; */
-        height: 95%;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .card2:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
-      }
-      .card3 {
-        gap: 20px;
-        /* border-radius: 5%; */
-        height: 95%;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .card3:hover {
-        transform: scale(1.05); /* Slight zoom */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
-      }
-      .card4 {
-        gap: 20px;
-        /* border-radius: 5%; */
-        height: 95%;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .card4:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-      }
-      .card5 {
-        gap: 20px;
-        /* border-radius: 5%; */
-        height: 95%;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-      }
-      .card5:hover {
-        transform: scale(1.05); 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-      }
-      .pimg {
-        display: block;
-        margin: 10px auto;
-        max-width: 60%;
-        height: auto;
-        background-color: wheat;
-        border-radius: 8px;
-        object-fit: cover;
-      }
-      .pimg:hover {
-        transform: scale(1.05); 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-      }
-      p{
-        margin-bottom: 20px;
-      }
 
-      /* about section */
-      .about {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background-image: url("./assets/Download\ Technology\ background\ for\ gears\ in\ mechanical\ concepts_\ for\ free.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .sec1{
-        height: 100%;
-        width: 96%;
-        color: white;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        top: 0;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        padding: 30px;
-        
-      }
-      .sec2{
-        height: 100%;
-        width: 96%;
-        color: white;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        top: 0;
-        backdrop-filter: blur(4px);
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        padding: 30px;
-        
-      }
-
-      .lang{
-        margin-left: 1550px;
-        
-      }
-      .ser{
-       display: grid;
-       grid-template-columns: 1fr 1fr 1fr;
-       gap: 20px;
-       cursor: pointer;
-
-      }
-      .ser1{
-        height: 350px;
-       padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center ;
-        background-color: rgb(31, 29, 28);
+        }
+        .ser1{
+          height: 350px;
+        padding-top: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center ;
+          background-color: rgb(31, 29, 28);
+          gap: 20px;
+          border-radius: 10px;
+        }
+        .ser1:hover{
+          transform: scale(1.05); 
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        .per{
+        display: grid;
+        grid-template-columns: 1fr ;
         gap: 20px;
-        border-radius: 10px;
-      }
-      .ser1:hover{
-        transform: scale(1.05); 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-      }
-      .per{
-       display: grid;
-       grid-template-columns: 1fr ;
-       gap: 20px;
-       cursor: pointer;
+        cursor: pointer;
 
-      }
-      .per1{
-        height: 350px;
-       padding-top: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center ;
-        background-color: rgb(31, 29, 28);
-        gap: 20px;
-        border-radius: 10px;
-      }
-      .per1:hover{
-        transform: scale(1.02); 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- Header -->
-      <header>
-        <div class="logo" style="color: #e9a319">🛠️ SAI TRANSFORMATIONS.LTD</div>
-        <nav class="nav">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">ContactUs</a></li>
-          </ul>
-        </nav>
-      </header>
-      
-
-      <!--  Hero Section -->
-      <div class="hero">
+        }
+        .per1{
+          height: 350px;
+        padding-top: 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center ;
+          background-color: rgb(31, 29, 28);
+          gap: 20px;
+          border-radius: 10px;
+        }
+        .per1:hover{
+          transform: scale(1.02); 
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+      </style>
+    </head>
+    <body>
+      <div class="main-container">
+        <!-- Header -->
+        <header>
+          <div class="logo" style="color: #e9a319">🛠️ SAI TRANSFORMATIONS.LTD</div>
+          <nav class="nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contacts">ContactUs</a></li>
+              <select style="padding: 8px 16px; border-radius: 4px; border: 1px solid #ccc; border: none; background-color: transparent; color: white;">
+                <option>Select Language</option>
+                <option>English</option>
+                <option>Marathi</option>
+                <option>Hindi</option>
+              </select>
+            </ul>
+          </nav>
+        </header>
         
-        <div class="hero-text">
-          <!-- <div class="tbutton">
-            <button >Translate</button>
-          </div> -->
-          <h1 class="head" style="color: #e9a319">PRECISION WELDING</h1>
-          <h1 class="ho">& METAL FABRICATION</h1>
+
+        <!--  Hero Section -->
+        <div class="hero">
+          
+          <div class="hero-text">
+            <!-- <div class="tbutton">
+              <button >Translate</button>
+            </div> -->
+            <h1 class="head" style="color: #e9a319">PRECISION WELDING</h1>
+            <h1 class="ho">& METAL FABRICATION</h1>
+            <br />
+            <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
+            <br />
+            <button class="know">KNOW MORE</button>
+            <div class="card">
+              <div class="card1">
+                <div class="pimg">
+                  <img
+                    src="./assets/sai web pro images/metalfabrication.jpg"
+                    alt=""
+                    height="100%"
+                    width="100%"
+                    style="border-radius: 5%"
+                  />
+                </div>
+                <p>Metal Fabrications</p>
+              </div>
+              <div class="card2">
+                <div class="pimg">
+                  <img
+                    src="./assets/sai web pro images/industrialshed.webp"
+                    alt=""
+                    height="100%"
+                    width="100%"
+                    style="border-radius: 5%"
+                  />
+                </div>
+                <p>Industrial Shed's</p>
+              </div>
+              <div class="card3">
+                <div class="pimg">
+                  <img
+                    src="./assets/sai web pro images/roofing shed.webp"
+                    alt=""
+                    height="100%"
+                    width="100%"
+                    style="border-radius: 5%"
+                  />
+                </div>
+                <p>Roofing Shed's</p>
+              </div>
+              <div class="card4">
+                <div class="pimg">
+                  <img
+                    src="./assets/sai web pro images/schoolfurniture.jpg"
+                    alt=""
+                    height="100%"
+                    width="100%"
+                    style="border-radius: 5%"
+                  />
+                </div>
+                <p>School Furnitures</p>
+              </div>
+              <div class="card5">
+                <div class="pimg">
+                  <img
+                    src="./assets/sai web pro images/metal furnioture.jpg"
+                    alt=""
+                    height="100%"
+                    width="100%"
+                    style="border-radius: 5%"
+                  />
+                </div>
+                <p>Metal Furnitures</p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
           <br />
-          <h4 class="hi">Grills, Gates, Staircases & Custom Solutions</h4>
-          <br />
-          <button class="know">KNOW MORE</button>
-          <div class="card">
-            <div class="card1">
-              <div class="pimg">
-                <img
-                  src="./assets/sai web pro images/channel gates.png"
-                  alt=""
-                  height="100%"
-                  width="100%"
-                  style="border-radius: 5%"
-                />
-              </div>
-              <p>Metal Fabrications</p>
+        </div>
+        
+        <!-- About section -->
+        <div class="about" id="about" >
+          <br><br>
+          <div class="sec1" >
+            
+          <h1 style="font-size: 50px; color: #e9a319; " >About Us</h1>
+          <br>
+          <p style="font-size: 30px;">Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</p>
+          <br>
+          <p style="font-size: 30px;">We offer a wide range of metal fabrication services, including Gates,,Window-Grills,Staircases,Industry Shed & Roofing and more. Our team possesses the knowledge and skills to handle any project from standard designs to unique,custom-build structures.</p>
+          <br>
+          <h1 style="color: #e9a319; font-size: 40px;">Building Quality and Trust Since 1996</h1>
+          </div>
+          <br><br>
+          <!-- Services -->
+        
+          <div class="sec2" id="services">
+            <h1 style="font-size: 50px;color: #e9a319;">Services</h1>
+            <br><br>
+          <div class="ser">
+            <div class="ser1">
+              <img src="./assets/sai web pro images/roofing shed.webp" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 ROOFING SHED</p>
             </div>
-            <div class="card2">
-              <div class="pimg">
-                <img
-                  src="./assets/sai web pro images/channel gates.png"
-                  alt=""
-                  height="100%"
-                  width="100%"
-                  style="border-radius: 5%"
-                />
-              </div>
-              <p>Industrial Shed's</p>
+            <div class="ser1">
+              <img src="./assets/sai web pro images/metal furnioture.jpg" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 METAL FURNITURES</p>
             </div>
-            <div class="card3">
-              <div class="pimg">
-                <img
-                  src="./assets/sai web pro images/channel gates.png"
-                  alt=""
-                  height="100%"
-                  width="100%"
-                  style="border-radius: 5%"
-                />
-              </div>
-              <p>Roofing Shed's</p>
+            <div class="ser1">
+              <img src="./assets/sai web pro images/schoolfurniture.jpg" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 SCHOOL FURNITURES</p>
             </div>
-            <div class="card4">
-              <div class="pimg">
-                <img
-                  src="./assets/sai web pro images/channel gates.png"
-                  alt=""
-                  height="100%"
-                  width="100%"
-                  style="border-radius: 5%"
-                />
-              </div>
-              <p>School Furnitures</p>
+          
+            <div class="ser1">
+              <img src="./assets/sai web pro images/channel gates.png" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 CHANNEL GATES</p>
             </div>
-            <div class="card5">
-              <div class="pimg">
-                <img
-                  src="./assets/sai web pro images/channel gates.png"
-                  alt=""
-                  height="100%"
-                  width="100%"
-                  style="border-radius: 5%"
-                />
-              </div>
-              <p>Metal Furnitures</p>
+            <div class="ser1">
+              <img src="./assets/sai web pro images/industrialshed.webp" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 DOME SHED</p>
+            </div>
+            <div class="ser1">
+              <img src="./assets/sai web pro images/machan work.png" alt="" height="150px" width="300px">
+              <p style="font-size: 25px;"> 👨🏻‍🏭 CUSTOMS WELDING'S</p>
             </div>
           </div>
+            </div>
+            <br><br >
+            <!-- Project secs -->
+        
+          <div class="sec2" id="projects">
+            <h1 style="font-size: 50px;color: #e9a319;">Featured Projects</h1>
+            <br><br>
+          <div class="per">
+            <div class="per1">
+              <div>
+                <img src="./assets/sai web pro images/taj safari .png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+              </div>
+              <div><p style="font-size: 30px;">📍 Location: Taj Safari – Baghvan Lodge, Pench (M.P.) <br> 
+                🏗️ Work Done: Swimming Pool Area Fabrication & Finishing  <br>
+                🧱 Type: Pool Decking, Shade Structure & Utility Integration  <br>
+                📅 Timeline: 15th June 2021 – 29th June 2021 <br>
+                🌟 Client: TAJ Hotels – TATA Group (IHCL)  <br>
+                </p></div>
+            </div>
+            <div class="per1">
+              
+              <div><p style="font-size: 30px;">🏫 Location: ORCHID PUBLIC SCHOOL, Katol  <br>
+                🏗️ Work Done: Dome Structure Fabrication & Installation  <br>
+                🔩 Type: Custom Metal Framework with Roofing  <br>
+                📅 Timeline: 16 DAYS  <br>
+                👥 Beneficiaries: 300+ Students & Faculty  <br>
+                
+                </p></div>
+                <div>
+                  <img src="./assets/sai web pro images/Orchid shed.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+                </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img src="./assets/sai web pro images/Ruya high shed.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+              </div>
+              <div><p style="font-size: 30px;">🏫 Location: BANARASIDAS RUYA HIGH-SCHOOL, Katol  <br>
+                🔨 Work Done: Stage-Shed Construction  <br>
+                📐 Type: Fabrication + Roofing  <br>
+                📅 Timeline:  3 DAYS <br>
+                👥 Beneficiaries: 500+ Students & Staff  <br>
+                
+                </p></div>
+            </div>
+          
+            <div class="per1">
+              
+              <div><p style="font-size: 30px;">📍 Location: VARDHAN RESTAURANT, Katol <br> 
+                🏗️ Work Done: Outdoor Shed Fabrication & Installation  <br>
+                🛠️ Type: Weatherproof Dining Area Cover  <br>
+                📅 Timeline: 24 DAYS <br>
+                👨‍👩‍👧‍👦 Beneficiaries: 100+ Daily Customers & Staff  <br>
+                
+                </p></div>
+                <div>
+                  <img src="./assets/sai web pro images/rajkamal.webp" alt="" height="250px" width="500px" style="border-radius: 10px;">
+                </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img src="./assets/sai web pro images/orchid deskbench.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+              </div>
+              <div><p style="font-size: 30px;">🏫 Location: ORCHID PUBLIC SCHOOL, Katol  <br>
+                🛠️ Work Done: Desk-Bench Installation  <br>
+                🔢 Quantity: 60+ Units  <br>
+                👩‍🏫 Students Benefited: 120+ <br> 
+                ⏱️ Timeline: 8 Days  <br>
+                
+                </p></div>
+            </div>
+            <div class="per1">
+              
+              <div><p style="font-size: 30px;">🏫 Location: NABIRA MAHAVIDYALAYA, Katol  <br>
+                🛠️ Installed: 80 Desk-Benches  <br>
+                👨‍🎓 Beneficiaries: 150+ Students  <br>
+                ⏱️ Timeline: 14 Days  <br>
+                
+                
+                </p></div>
+                <div>
+                  <img src="./assets/sai web pro images/nabira desk bench.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+                </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img src="./assets/sai web pro images/machan work.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+              </div>
+              <div><p style="font-size: 30px;">📍 Location: Katol (Farmhouse/Private Property)  <br>
+                🛠️ Work Done: Machan (Treehouse Platform) Fabrication & Installation  <br>
+                🪵 Type: Elevated Iron/Steel Platform with Safety Railings  <br>
+                📅 Timeline: 20 DAYS  <br>
+                👨‍🌾 Beneficiaries: Farm Visitors, Security Guards, Wildlife Spotters <br>
+                </p></div>
+            </div>
+            <div class="per1">
+              
+              <div><p style="font-size: 30px;">📍 Location: Katol (Client-Specific Site)  <br>
+                🏗️ Work Done: Staircase Fabrication & Installation  <br>
+                🔩 Type: MS Frame with Anti-Slip Steps (Indoor/Outdoor)  <br>
+                📅 Timeline: 2 DAYS  <br>
+                👥 Beneficiaries: Residential/Commercial Property Users  <br> 
+                
+                
+                </p></div>
+                <div>
+                  <img src="./assets/sai web pro images/stairs.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+                </div>
+            </div>
+            <div class="per1">
+              <div>
+                <img src="./assets/sai web pro images/channel gates.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
+              </div>
+              <div><p style="font-size: 30px;">📍 Location: Katol (Client-Specific Site)  <br>
+                🧰 Work Done: Custom Channel Gate Fabrication & Installation  <br>
+                🔩 Type: Mild Steel Sliding Gate with Locking System  <br>
+                📅 Timeline: 7 DAYS <br>
+                👨‍🔧 Beneficiaries: Property Owner & Visitors  <br>
+                
+                </p></div>
+            </div>
+          </div>
+        
+            </div>
+            <!-- featured project end -->
+              <br><br>
+            <div class="sec1" id="contacts">
+            
+              <h1 style="font-size: 50px; color: #e9a319; " >Contact Us</h1>
+              <br>
+              <p style="font-size: 30px;"> Sai Transformation (Sai Fabrication & Gas Welding Work) <br><br> 📍  Near Fetri Junewani Road,  Katol, District Nagpur, Maharashtra – 441302  <br><br> 📞 Phone: +91-8624837716  <br><br> 📧 Email:25saifebrication@gmail.com  <br> <br>🌐 Website: www.saitransformation.in </p>
+              <br>
+              <!-- <p style="font-size: 40px;">We offer a wide range of metal fabrication services, including Gates,,Window-Grills,Staircases,Industry Shed & Roofing and more. Our team possesses the knowledge and skills to handle any project from standard designs to unique,custom-build structures.</p>
+              <br>
+              <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1> -->
+              </div> 
+              <br><br>
+              <!-- footer -->
+              <div class="sec1" id="footer">
+                <h1 style="font-size: 50px; color: #e9a319; " >Our Workshop</h1>
+                <br>
+                <div class="ser1" style="display: flex; flex-direction: row; ">
+                  <img src="./assets/workshop1.png" alt="" height="300px" width="600px"  style="width: 600px; height: 300px; border-radius: 10px; display: inline-block; margin-right: 50px;" >
+                  
+                  <br>
+                  <img src="./assets/workshop2.png" alt="" height="300px" width="600px"  style="width: 600px; height: 300px; border-radius: 10px; display: inline-block; margin-left: 20px;">          
+                </div>
+                <br>
+                <br>
+                <br>
+                <h1 style="font-size: 50px; color: #e9a319; text-align: center;" >Why Choose Us</h1>
+                <br>
+                <br>
+                <br>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; margin-left: 150px;">
+                  <div style="height: 100px;"><h1>✅ Quality Craftmanship</h1></div>
+                  <div style="height: 100px;"><h1>⭐ Customer-Focused Approach</h1></div>
+                  <div style="height: 100px;"><h1>👷 Safety & Reliability</h1></div>
+                  <div style="height: 100px;"><h1>🏆 10+ year Experience </h1></div>
+                  <div style="height: 100px;"><h1>🕒 On Time Delivery</h1></div>
+                  <div style="height: 100px;"><h1>💯 Quality Materials</h1></div>
+                 
+
+                </div>
+                <br>
+                <p style="font-size: 55px; text-align: center; color: #e9a319">SAI TRANSFORMATIONS</p>
+                
+                <p style="font-size: 35px; text-align: center; color: #e9a319">SINCE 1996</p>
+                <br>
+                <button class="know" style="width: 300px; height: 90px; display: block; margin: 0 auto;">START A PROJECT</button>
+                <br>
+                <br>
+                <br><br><br>
+                <p style="text-align: center;"><a href="https://www.facebook.com/share/12K6oBRojo6/" target="_blank" style="text-decoration: none; color: white; font-size: 20px; margin-right: 20px;">
+                  <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" style="vertical-align: middle; margin-right: 5px;" />
+                  Facebook
+                </a>
+                <a href="https://www.instagram.com/stmfkatol?igsh=MXF4cnR2b3lmajFo" target="_blank" style="text-decoration: none; color: white; font-size: 20px; margin-right: 20px;">
+                  <img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram" style="vertical-align: middle; margin-right: 5px;" />
+                  Instagram
+                </a>
+                <a href="https://wa.me/918624837716?text=Hello%20Sai%20Transformations%2C%20I%20want%20a%20quote" target="_blank" style="text-decoration: none; color: white; font-size: 20px; margin-right: 20px;">
+                  <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp" style="vertical-align: middle; margin-right: 5px;" />
+                  WhatsApp
+                </a></p>
+                <hr style="color: #e9a319;">
+                <p style="text-align: center; margin-top: 25px; font-size: 25px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> © 2025 Sai Transformation. All Rights Reserve</p>
+                </div> 
+                <!-- footer -->
         </div>
-        <br>
-        <br>
-        <br />
       </div>
-      
-      <!-- About section -->
-      <div class="about">
-        <div class="sec1">
-        <h1 style="font-size: 50px; color: #e9a319;">About Us</h1>
-        <br>
-        <p style="font-size: 40px;">Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).</p>
-        <br>
-        <p style="font-size: 40px;">We offer a wide range of metal fabrication services, including Gates,,Window-Grills,Staircases,Industry Shed & Roofing and more. Our team possesses the knowledge and skills to handle any project from standard designs to unique,custom-build structures.</p>
-        <br>
-        <h1 style="color: #e9a319;">Building Quality and Trust Since 1996</h1>
-        </div>
-        <br><br>
-        <!-- Services -->
-       
-        <div class="sec2">
-          <h1 style="font-size: 50px;color: #e9a319;">Services</h1>
-          <br><br>
-        <div class="ser">
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">ROOFING SHED</p>
-          </div>
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">METAL FURNITURES</p>
-          </div>
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">SCHOOL FURNITURES</p>
-          </div>
-         
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">CHANNEL GATES</p>
-          </div>
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">DOME SHED</p>
-          </div>
-          <div class="ser1">
-            <img src="./assets/sai web pro images/channel gates.png" alt="" height="200px" width="200px">
-            <p style="font-size: 35px;">CUSTOMS WELDING'S</p>
-          </div>
-        </div>
-          </div>
-          <br><br>
-          <!-- Project secs -->
-       
-        <div class="sec2">
-          <h1 style="font-size: 50px;color: #e9a319;">Featured Projects</h1>
-          <br><br>
-        <div class="per">
-          <div class="per1">
-            <div>
-              <img src="./assets/sai web pro images/taj safari .png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-            </div>
-            <div><p style="font-size: 35px;">📍 Location: Taj Safari – Baghvan Lodge, Pench (M.P.) <br> 
-              🏗️ Work Done: Swimming Pool Area Fabrication & Finishing  <br>
-              🧱 Type: Pool Decking, Shade Structure & Utility Integration  <br>
-              📅 Timeline: 15th June 2021 – 29th June 2021 <br>
-              🌟 Client: TAJ Hotels – TATA Group (IHCL)  <br>
-              </p></div>
-          </div>
-          <div class="per1">
-            
-            <div><p style="font-size: 35px;">🏫 Location: ORCHID PUBLIC SCHOOL, Katol  <br>
-              🏗️ Work Done: Dome Structure Fabrication & Installation  <br>
-              🔩 Type: Custom Metal Framework with Roofing  <br>
-              📅 Timeline: 16 DAYS  <br>
-              👥 Beneficiaries: 300+ Students & Faculty  <br>
-              
-              </p></div>
-              <div>
-                <img src="./assets/sai web pro images/Orchid shed.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-              </div>
-          </div>
-          <div class="per1">
-            <div>
-              <img src="./assets/sai web pro images/Ruya high shed.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-            </div>
-            <div><p style="font-size: 35px;">🏫 Location: BANARASIDAS RUYA HIGH-SCHOOL, Katol  <br>
-              🔨 Work Done: Stage-Shed Construction  <br>
-              📐 Type: Fabrication + Roofing  <br>
-              📅 Timeline:  3 DAYS <br>
-              👥 Beneficiaries: 500+ Students & Staff  <br>
-              
-              </p></div>
-          </div>
-         
-          <div class="per1">
-            
-            <div><p style="font-size: 35px;">📍 Location: VARDHAN RESTAURANT, Katol <br> 
-              🏗️ Work Done: Outdoor Shed Fabrication & Installation  <br>
-              🛠️ Type: Weatherproof Dining Area Cover  <br>
-              📅 Timeline: 24 DAYS <br>
-              👨‍👩‍👧‍👦 Beneficiaries: 100+ Daily Customers & Staff  <br>
-              
-              </p></div>
-              <div>
-                <img src="./assets/sai web pro images/rajkamal.webp" alt="" height="250px" width="500px" style="border-radius: 10px;">
-              </div>
-          </div>
-          <div class="per1">
-            <div>
-              <img src="./assets/sai web pro images/orchid deskbench.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-            </div>
-            <div><p style="font-size: 35px;">🏫 Location: ORCHID PUBLIC SCHOOL, Katol  <br>
-              🛠️ Work Done: Desk-Bench Installation  <br>
-              🔢 Quantity: 60+ Units  <br>
-              👩‍🏫 Students Benefited: 120+ <br> 
-              ⏱️ Timeline: 8 Days  <br>
-              
-              </p></div>
-          </div>
-          <div class="per1">
-            
-            <div><p style="font-size: 35px;">🏫 Location: NABIRA MAHAVIDYALAYA, Katol  <br>
-              🛠️ Installed: 80 Desk-Benches  <br>
-              👨‍🎓 Beneficiaries: 150+ Students  <br>
-              ⏱️ Timeline: 14 Days  <br>
-              
-              
-              </p></div>
-              <div>
-                <img src="./assets/sai web pro images/nabira desk bench.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-              </div>
-          </div>
-          <div class="per1">
-            <div>
-              <img src="./assets/sai web pro images/machan work.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-            </div>
-            <div><p style="font-size: 30px;">📍 Location: Katol (Farmhouse/Private Property)  <br>
-              🛠️ Work Done: Machan (Treehouse Platform) Fabrication & Installation  <br>
-              🪵 Type: Elevated Iron/Steel Platform with Safety Railings  <br>
-              📅 Timeline: 20 DAYS  <br>
-              👨‍🌾 Beneficiaries: Farm Visitors, Security Guards, Wildlife Spotters <br>
-              </p></div>
-          </div>
-          <div class="per1">
-            
-            <div><p style="font-size: 35px;">📍 Location: Katol (Client-Specific Site)  <br>
-              🏗️ Work Done: Staircase Fabrication & Installation  <br>
-              🔩 Type: MS Frame with Anti-Slip Steps (Indoor/Outdoor)  <br>
-              📅 Timeline: 2 DAYS  <br>
-              👥 Beneficiaries: Residential/Commercial Property Users  <br> 
-              
-              
-              </p></div>
-              <div>
-                <img src="./assets/sai web pro images/stairs.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-              </div>
-          </div>
-          <div class="per1">
-            <div>
-              <img src="./assets/sai web pro images/channel gates.png" alt="" height="250px" width="500px" style="border-radius: 10px;">
-            </div>
-            <div><p style="font-size: 35px;">📍 Location: Katol (Client-Specific Site)  <br>
-              🧰 Work Done: Custom Channel Gate Fabrication & Installation  <br>
-              🔩 Type: Mild Steel Sliding Gate with Locking System  <br>
-              📅 Timeline: 7 DAYS <br>
-              👨‍🔧 Beneficiaries: Property Owner & Visitors  <br>
-              
-              </p></div>
-          </div>
-        </div>
-          </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>
